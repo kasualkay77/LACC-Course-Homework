@@ -1,0 +1,1748 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kasualkay77/Assignment-1-/blob/main/Assignment_1.7/18\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "N4dSWM199Mq4"
+      },
+      "outputs": [],
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "id": "FwxL6QKWWbfp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "gbHY1jZpUoVb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "[Assignment #1 Project Write up](https://https://docs.google.com/document/d/1TcrrrcG6XkeXRm2Jzty3hbf4I49ppwMtwVIiS0U5rk8/edit?usp=sharing)"
+      ],
+      "metadata": {
+        "id": "LtSc9Rjwz-G_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8AnWr28TMw8F"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "import matplotlib.pyplot as plt"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "dw51iWrjUOBN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ezz2HIONQP4-",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 353
+        },
+        "outputId": "8b03f781-238d-4897-80ff-4dd5136f578c"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-4-738748fa9869>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'https://raw.githubusercontent.com/CunyLaguardiaDataAnalytics/datasets/master/2014-15_To_2016-17_School-_Level_NYC_Regents_Report_For_All_Variables.csv'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mna_values\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mmissing_values\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'missing_values' is not defined"
+          ]
+        }
+      ],
+      "source": [
+        "df = pd.read_csv('https://raw.githubusercontent.com/CunyLaguardiaDataAnalytics/datasets/master/2014-15_To_2016-17_School-_Level_NYC_Regents_Report_For_All_Variables.csv', na_values = missing_values)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 287
+        },
+        "id": "YtzC8m1tRvKy",
+        "outputId": "39513f47-3e57-4427-bdd6-89a38499dfad"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AttributeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-6-bf61d4a76141>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msummary\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py\u001b[0m in \u001b[0;36m__getattr__\u001b[0;34m(self, name)\u001b[0m\n\u001b[1;32m   5485\u001b[0m         ):\n\u001b[1;32m   5486\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mname\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 5487\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mobject\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__getattribute__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mname\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   5488\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   5489\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m__setattr__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mname\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mstr\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mAttributeError\u001b[0m: 'DataFrame' object has no attribute 'summary'"
+          ]
+        }
+      ],
+      "source": [
+        "df.summary"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cfanwcuPR52h",
+        "outputId": "8c4c90a0-883d-458b-8fe4-85d0e112ca89"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<bound method DataFrame.info of                                School Name School Level  \\\n",
+              "School DBN                                                \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8   \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8   \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8   \n",
+              "...                                    ...          ...   \n",
+              "84X717                Icahn Charter School          K-8   \n",
+              "84X717                Icahn Charter School          K-8   \n",
+              "84X717                Icahn Charter School          K-8   \n",
+              "84X717                Icahn Charter School          K-8   \n",
+              "84X717                Icahn Charter School          K-8   \n",
+              "\n",
+              "                           Regents Exam  Year  Total Tested Mean Score  \\\n",
+              "School DBN                                                               \n",
+              "01M034              Common Core Algebra  2017             4          s   \n",
+              "01M034               Living Environment  2015            16       77.9   \n",
+              "01M034               Living Environment  2016             9         74   \n",
+              "01M140              Common Core Algebra  2016             3          s   \n",
+              "01M140              Common Core Algebra  2017             2          s   \n",
+              "...                                 ...   ...           ...        ...   \n",
+              "84X717               Living Environment  2016             8          s   \n",
+              "84X717               Living Environment  2016             5          s   \n",
+              "84X717               Living Environment  2017             6          s   \n",
+              "84X717               Living Environment  2017             4          s   \n",
+              "84X717      U.S. History and Government  2015             1          s   \n",
+              "\n",
+              "           Number Scoring Below 65 Percent Scoring Below 65  \\\n",
+              "School DBN                                                    \n",
+              "01M034                           s                        s   \n",
+              "01M034                           1                      6.3   \n",
+              "01M034                           1                     11.1   \n",
+              "01M140                           s                        s   \n",
+              "01M140                           s                        s   \n",
+              "...                            ...                      ...   \n",
+              "84X717                           s                        s   \n",
+              "84X717                           s                        s   \n",
+              "84X717                           s                        s   \n",
+              "84X717                           s                        s   \n",
+              "84X717                           s                        s   \n",
+              "\n",
+              "           Number Scoring 65 or Above Percent Scoring 65 or Above  \\\n",
+              "School DBN                                                          \n",
+              "01M034                              s                           s   \n",
+              "01M034                             15                        93.8   \n",
+              "01M034                              8                        88.9   \n",
+              "01M140                              s                           s   \n",
+              "01M140                              s                           s   \n",
+              "...                               ...                         ...   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "\n",
+              "           Number Scoring 80 or Above Percent Scoring 80 or Above  \\\n",
+              "School DBN                                                          \n",
+              "01M034                              s                           s   \n",
+              "01M034                              7                        43.8   \n",
+              "01M034                              2                        22.2   \n",
+              "01M140                              s                           s   \n",
+              "01M140                              s                           s   \n",
+              "...                               ...                         ...   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "84X717                              s                           s   \n",
+              "\n",
+              "           Number Scoring CR Percent Scoring CR  \n",
+              "School DBN                                       \n",
+              "01M034                    na                 na  \n",
+              "01M034                    na                 na  \n",
+              "01M034                    na                 na  \n",
+              "01M140                    na                 na  \n",
+              "01M140                    na                 na  \n",
+              "...                      ...                ...  \n",
+              "84X717                    na                 na  \n",
+              "84X717                    na                 na  \n",
+              "84X717                    na                 na  \n",
+              "84X717                    na                 na  \n",
+              "84X717                    na                 na  \n",
+              "\n",
+              "[212331 rows x 14 columns]>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ],
+      "source": [
+        "df.info"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 647
+        },
+        "id": "iUAmlIFPRaju",
+        "outputId": "4b1d849c-7377-467d-cd74-7f4ace863b33"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "                               School Name School Level         Regents Exam  \\\n",
+              "School DBN                                                                     \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8  Common Core Algebra   \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8   Living Environment   \n",
+              "01M034      P.S. 034 Franklin D. Roosevelt          K-8   Living Environment   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8  Common Core Algebra   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8  Common Core Algebra   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8   Living Environment   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8   Living Environment   \n",
+              "01M140              P.S. 140 Nathan Straus          K-8   Living Environment   \n",
+              "01M184                P.S. 184m Shuang Wen          K-8  Common Core Algebra   \n",
+              "01M184                P.S. 184m Shuang Wen          K-8  Common Core Algebra   \n",
+              "\n",
+              "            Year  Total Tested Mean Score Number Scoring Below 65  \\\n",
+              "School DBN                                                          \n",
+              "01M034      2017             4          s                       s   \n",
+              "01M034      2015            16       77.9                       1   \n",
+              "01M034      2016             9         74                       1   \n",
+              "01M140      2016             3          s                       s   \n",
+              "01M140      2017             2          s                       s   \n",
+              "01M140      2015             9       67.4                       3   \n",
+              "01M140      2016            15       72.6                       2   \n",
+              "01M140      2017             9       64.4                       5   \n",
+              "01M184      2015            49       78.4                       1   \n",
+              "01M184      2016            51         79                       9   \n",
+              "\n",
+              "           Percent Scoring Below 65 Number Scoring 65 or Above  \\\n",
+              "School DBN                                                       \n",
+              "01M034                            s                          s   \n",
+              "01M034                          6.3                         15   \n",
+              "01M034                         11.1                          8   \n",
+              "01M140                            s                          s   \n",
+              "01M140                            s                          s   \n",
+              "01M140                         33.3                          6   \n",
+              "01M140                         13.3                         13   \n",
+              "01M140                         55.6                          4   \n",
+              "01M184                            2                         48   \n",
+              "01M184                         17.6                         42   \n",
+              "\n",
+              "           Percent Scoring 65 or Above Number Scoring 80 or Above  \\\n",
+              "School DBN                                                          \n",
+              "01M034                               s                          s   \n",
+              "01M034                            93.8                          7   \n",
+              "01M034                            88.9                          2   \n",
+              "01M140                               s                          s   \n",
+              "01M140                               s                          s   \n",
+              "01M140                            66.7                          0   \n",
+              "01M140                            86.7                          5   \n",
+              "01M140                            44.4                          1   \n",
+              "01M184                              98                         23   \n",
+              "01M184                            82.4                         33   \n",
+              "\n",
+              "           Percent Scoring 80 or Above Number Scoring CR Percent Scoring CR  \n",
+              "School DBN                                                                   \n",
+              "01M034                               s                na                 na  \n",
+              "01M034                            43.8                na                 na  \n",
+              "01M034                            22.2                na                 na  \n",
+              "01M140                               s                na                 na  \n",
+              "01M140                               s                na                 na  \n",
+              "01M140                               0                na                 na  \n",
+              "01M140                            33.3                na                 na  \n",
+              "01M140                            11.1                na                 na  \n",
+              "01M184                            46.9                48                 98  \n",
+              "01M184                            64.7                40               78.4  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-3753ef8f-dad2-4339-b41f-a2003234388d\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>School Name</th>\n",
+              "      <th>School Level</th>\n",
+              "      <th>Regents Exam</th>\n",
+              "      <th>Year</th>\n",
+              "      <th>Total Tested</th>\n",
+              "      <th>Mean Score</th>\n",
+              "      <th>Number Scoring Below 65</th>\n",
+              "      <th>Percent Scoring Below 65</th>\n",
+              "      <th>Number Scoring 65 or Above</th>\n",
+              "      <th>Percent Scoring 65 or Above</th>\n",
+              "      <th>Number Scoring 80 or Above</th>\n",
+              "      <th>Percent Scoring 80 or Above</th>\n",
+              "      <th>Number Scoring CR</th>\n",
+              "      <th>Percent Scoring CR</th>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>School DBN</th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "      <th></th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>01M034</th>\n",
+              "      <td>P.S. 034 Franklin D. Roosevelt</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>4</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M034</th>\n",
+              "      <td>P.S. 034 Franklin D. Roosevelt</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>16</td>\n",
+              "      <td>77.9</td>\n",
+              "      <td>1</td>\n",
+              "      <td>6.3</td>\n",
+              "      <td>15</td>\n",
+              "      <td>93.8</td>\n",
+              "      <td>7</td>\n",
+              "      <td>43.8</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M034</th>\n",
+              "      <td>P.S. 034 Franklin D. Roosevelt</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>9</td>\n",
+              "      <td>74</td>\n",
+              "      <td>1</td>\n",
+              "      <td>11.1</td>\n",
+              "      <td>8</td>\n",
+              "      <td>88.9</td>\n",
+              "      <td>2</td>\n",
+              "      <td>22.2</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M140</th>\n",
+              "      <td>P.S. 140 Nathan Straus</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>3</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M140</th>\n",
+              "      <td>P.S. 140 Nathan Straus</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>2</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>s</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M140</th>\n",
+              "      <td>P.S. 140 Nathan Straus</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>9</td>\n",
+              "      <td>67.4</td>\n",
+              "      <td>3</td>\n",
+              "      <td>33.3</td>\n",
+              "      <td>6</td>\n",
+              "      <td>66.7</td>\n",
+              "      <td>0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M140</th>\n",
+              "      <td>P.S. 140 Nathan Straus</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>15</td>\n",
+              "      <td>72.6</td>\n",
+              "      <td>2</td>\n",
+              "      <td>13.3</td>\n",
+              "      <td>13</td>\n",
+              "      <td>86.7</td>\n",
+              "      <td>5</td>\n",
+              "      <td>33.3</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M140</th>\n",
+              "      <td>P.S. 140 Nathan Straus</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>9</td>\n",
+              "      <td>64.4</td>\n",
+              "      <td>5</td>\n",
+              "      <td>55.6</td>\n",
+              "      <td>4</td>\n",
+              "      <td>44.4</td>\n",
+              "      <td>1</td>\n",
+              "      <td>11.1</td>\n",
+              "      <td>na</td>\n",
+              "      <td>na</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M184</th>\n",
+              "      <td>P.S. 184m Shuang Wen</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>49</td>\n",
+              "      <td>78.4</td>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "      <td>48</td>\n",
+              "      <td>98</td>\n",
+              "      <td>23</td>\n",
+              "      <td>46.9</td>\n",
+              "      <td>48</td>\n",
+              "      <td>98</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>01M184</th>\n",
+              "      <td>P.S. 184m Shuang Wen</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>51</td>\n",
+              "      <td>79</td>\n",
+              "      <td>9</td>\n",
+              "      <td>17.6</td>\n",
+              "      <td>42</td>\n",
+              "      <td>82.4</td>\n",
+              "      <td>33</td>\n",
+              "      <td>64.7</td>\n",
+              "      <td>40</td>\n",
+              "      <td>78.4</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-3753ef8f-dad2-4339-b41f-a2003234388d')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-3753ef8f-dad2-4339-b41f-a2003234388d button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-3753ef8f-dad2-4339-b41f-a2003234388d');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ],
+      "source": [
+        "df.head(10)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Identifier'].is_unique"
+      ],
+      "metadata": {
+        "id": "bEITp_pZNllu",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 502
+        },
+        "outputId": "503e1c0a-3766-4d2c-9305-3e2d9f519c7c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3360\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3361\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcasted_key\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3362\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;31mKeyError\u001b[0m: 'Identifier'",
+            "\nThe above exception was the direct cause of the following exception:\n",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-9-4516b18f5dad>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Identifier'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mis_unique\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36m__getitem__\u001b[0;34m(self, key)\u001b[0m\n\u001b[1;32m   3456\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcolumns\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mnlevels\u001b[0m \u001b[0;34m>\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3457\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_getitem_multilevel\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3458\u001b[0;31m             \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcolumns\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3459\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mis_integer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mindexer\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3460\u001b[0m                 \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0mindexer\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3361\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcasted_key\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3362\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3363\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3364\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3365\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mis_scalar\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0misna\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhasnans\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyError\u001b[0m: 'Identifier'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "missing_values = ['na', 's']"
+      ],
+      "metadata": {
+        "id": "QzVWnB0tEk5U"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Mean Score'].fillna(0, inplace=True)"
+      ],
+      "metadata": {
+        "id": "AOlSEQLPFx5w"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Mean Score'] = pd.to_numeric(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 287
+        },
+        "id": "P_1IRmFhGGCw",
+        "outputId": "b897e9b1-cbf7-430f-b46a-5377d957fd12"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-19-542fcd8cbc33>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Mean Score'\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mto_numeric\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdf\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/tools/numeric.py\u001b[0m in \u001b[0;36mto_numeric\u001b[0;34m(arg, errors, downcast)\u001b[0m\n\u001b[1;32m    161\u001b[0m         \u001b[0mvalues\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0marray\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0marg\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdtype\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"O\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    162\u001b[0m     \u001b[0;32melif\u001b[0m \u001b[0mgetattr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0marg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"ndim\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m>\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 163\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mTypeError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"arg must be a list, tuple, 1-d array, or Series\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    164\u001b[0m     \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    165\u001b[0m         \u001b[0mvalues\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0marg\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mTypeError\u001b[0m: arg must be a list, tuple, 1-d array, or Series"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.loc[0:, 'Mean Score'].head(10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ggkik9r-H5IV",
+        "outputId": "81c64e25-f32c-426f-e6bb-050333b1a79a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0    <function to_numeric at 0x7f77a624eb90>\n",
+              "1    <function to_numeric at 0x7f77a624eb90>\n",
+              "2    <function to_numeric at 0x7f77a624eb90>\n",
+              "3    <function to_numeric at 0x7f77a624eb90>\n",
+              "4    <function to_numeric at 0x7f77a624eb90>\n",
+              "5    <function to_numeric at 0x7f77a624eb90>\n",
+              "6    <function to_numeric at 0x7f77a624eb90>\n",
+              "7    <function to_numeric at 0x7f77a624eb90>\n",
+              "8    <function to_numeric at 0x7f77a624eb90>\n",
+              "9    <function to_numeric at 0x7f77a624eb90>\n",
+              "Name: Mean Score, dtype: object"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.groupby(['Regent Exam'])['School Dbn'].count().sort_values(ascending=False).plot(kind='bar')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 299
+        },
+        "id": "tXzlkYn4RiMJ",
+        "outputId": "4a3ba638-3825-4a41-8c83-1456e7beac03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-1-354ef459972d>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mgroupby\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Regent Exam'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'School Dbn'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcount\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msort_values\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mascending\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mFalse\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mplot\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkind\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m'bar'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'df' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "mALX3flFINz9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Num_Bath'] = pd.to_numeric(df['NUM_BATH'], errors='coerce')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 502
+        },
+        "id": "nc-7G31IFUXR",
+        "outputId": "15952be2-ec0c-4409-c503-f9c8a4420705"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3360\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3361\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcasted_key\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3362\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;31mKeyError\u001b[0m: 'NUM_BATH'",
+            "\nThe above exception was the direct cause of the following exception:\n",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-12-1d31f390e885>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Num_Bath'\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mto_numeric\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdf\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'NUM_BATH'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0merrors\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m'coerce'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36m__getitem__\u001b[0;34m(self, key)\u001b[0m\n\u001b[1;32m   3456\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcolumns\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mnlevels\u001b[0m \u001b[0;34m>\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3457\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_getitem_multilevel\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3458\u001b[0;31m             \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcolumns\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3459\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mis_integer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mindexer\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3460\u001b[0m                 \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0mindexer\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3361\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcasted_key\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3362\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3363\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0merr\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3364\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3365\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mis_scalar\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0misna\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhasnans\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyError\u001b[0m: 'NUM_BATH'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.loc[df['School Name'].isin(target_school)]"
+      ],
+      "metadata": {
+        "id": "Pqu3Or55nj8C"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 165
+        },
+        "id": "5hlh2ktWoSuT",
+        "outputId": "ccd3a7d2-4bb3-490e-a380-204c1e354e37"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AttributeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-23-b5fca0212e86>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mtarget_school\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdescribe\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mAttributeError\u001b[0m: 'set' object has no attribute 'describe'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.groupby(['Regents Exam'])['Mean Score]().sort_values(ascending=False)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 287
+        },
+        "id": "uAD0p6lRo0Sp",
+        "outputId": "53302ece-6365-4b2e-9e9c-674c6335eb3b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AttributeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-27-e939a3b83ade>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mgroupby\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Regents Exam'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Mean Score'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mMean\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msort_values\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mascending\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mFalse\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/groupby/groupby.py\u001b[0m in \u001b[0;36m__getattr__\u001b[0;34m(self, attr)\u001b[0m\n\u001b[1;32m    910\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    911\u001b[0m         raise AttributeError(\n\u001b[0;32m--> 912\u001b[0;31m             \u001b[0;34mf\"'{type(self).__name__}' object has no attribute '{attr}'\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    913\u001b[0m         )\n\u001b[1;32m    914\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mAttributeError\u001b[0m: 'SeriesGroupBy' object has no attribute 'Mean'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df[df['School Name'].str.contains('Jackson')]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 1000
+        },
+        "id": "7Q14oHmGq2yO",
+        "outputId": "4eb79483-f9db-4591-a5a5-89f45a5ac780"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "       School DBN                                        School Name  \\\n",
+              "13126      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "13127      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "43001      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "43002      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "43003      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "87378      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "87379      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "87380      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "87381      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "87382      23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "127801     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "127802     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "127803     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "127804     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "188426     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "188427     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "188428     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "188429     23K284  The Gregory Jocko Jackson School of Sports, Ar...   \n",
+              "\n",
+              "       School Level         Regents Exam  Year  Total Tested  \\\n",
+              "13126           K-8  Common Core Algebra  2015            10   \n",
+              "13127           K-8   Living Environment  2017            13   \n",
+              "43001           K-8  Common Core Algebra  2015            10   \n",
+              "43002           K-8   Living Environment  2017             9   \n",
+              "43003           K-8   Living Environment  2017             4   \n",
+              "87378           K-8  Common Core Algebra  2015             8   \n",
+              "87379           K-8  Common Core Algebra  2015             2   \n",
+              "87380           K-8   Living Environment  2017             1   \n",
+              "87381           K-8   Living Environment  2017            10   \n",
+              "87382           K-8   Living Environment  2017             2   \n",
+              "127801          K-8  Common Core Algebra  2015             4   \n",
+              "127802          K-8  Common Core Algebra  2015             6   \n",
+              "127803          K-8   Living Environment  2017             5   \n",
+              "127804          K-8   Living Environment  2017             8   \n",
+              "188426          K-8  Common Core Algebra  2015             6   \n",
+              "188427          K-8  Common Core Algebra  2015             4   \n",
+              "188428          K-8   Living Environment  2017             7   \n",
+              "188429          K-8   Living Environment  2017             6   \n",
+              "\n",
+              "                                     Mean Score  Number Scoring Below 65  \\\n",
+              "13126   <function to_numeric at 0x7f77a624eb90>                      1.0   \n",
+              "13127   <function to_numeric at 0x7f77a624eb90>                      6.0   \n",
+              "43001   <function to_numeric at 0x7f77a624eb90>                      1.0   \n",
+              "43002   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "43003   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "87378   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "87379   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "87380   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "87381   <function to_numeric at 0x7f77a624eb90>                      4.0   \n",
+              "87382   <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "127801  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "127802  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "127803  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "127804  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "188426  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "188427  <function to_numeric at 0x7f77a624eb90>                      NaN   \n",
+              "188428  <function to_numeric at 0x7f77a624eb90>                      5.0   \n",
+              "188429  <function to_numeric at 0x7f77a624eb90>                      1.0   \n",
+              "\n",
+              "        Percent Scoring Below 65  Number Scoring 65 or Above  \\\n",
+              "13126                       10.0                         9.0   \n",
+              "13127                       46.2                         7.0   \n",
+              "43001                       10.0                         9.0   \n",
+              "43002                        NaN                         NaN   \n",
+              "43003                        NaN                         NaN   \n",
+              "87378                        NaN                         NaN   \n",
+              "87379                        NaN                         NaN   \n",
+              "87380                        NaN                         NaN   \n",
+              "87381                       40.0                         6.0   \n",
+              "87382                        NaN                         NaN   \n",
+              "127801                       NaN                         NaN   \n",
+              "127802                       NaN                         NaN   \n",
+              "127803                       NaN                         NaN   \n",
+              "127804                       NaN                         NaN   \n",
+              "188426                       NaN                         NaN   \n",
+              "188427                       NaN                         NaN   \n",
+              "188428                      71.4                         2.0   \n",
+              "188429                      16.7                         5.0   \n",
+              "\n",
+              "        Percent Scoring 65 or Above  Number Scoring 80 or Above  \\\n",
+              "13126                          90.0                         0.0   \n",
+              "13127                          53.8                         1.0   \n",
+              "43001                          90.0                         0.0   \n",
+              "43002                           NaN                         NaN   \n",
+              "43003                           NaN                         NaN   \n",
+              "87378                           NaN                         NaN   \n",
+              "87379                           NaN                         NaN   \n",
+              "87380                           NaN                         NaN   \n",
+              "87381                          60.0                         1.0   \n",
+              "87382                           NaN                         NaN   \n",
+              "127801                          NaN                         NaN   \n",
+              "127802                          NaN                         NaN   \n",
+              "127803                          NaN                         NaN   \n",
+              "127804                          NaN                         NaN   \n",
+              "188426                          NaN                         NaN   \n",
+              "188427                          NaN                         NaN   \n",
+              "188428                         28.6                         1.0   \n",
+              "188429                         83.3                         0.0   \n",
+              "\n",
+              "        Percent Scoring 80 or Above  Number Scoring CR  Percent Scoring CR  \n",
+              "13126                           0.0                3.0                30.0  \n",
+              "13127                           7.7                NaN                 NaN  \n",
+              "43001                           0.0                3.0                30.0  \n",
+              "43002                           NaN                NaN                 NaN  \n",
+              "43003                           NaN                NaN                 NaN  \n",
+              "87378                           NaN                NaN                 NaN  \n",
+              "87379                           NaN                NaN                 NaN  \n",
+              "87380                           NaN                NaN                 NaN  \n",
+              "87381                          10.0                NaN                 NaN  \n",
+              "87382                           NaN                NaN                 NaN  \n",
+              "127801                          NaN                NaN                 NaN  \n",
+              "127802                          NaN                NaN                 NaN  \n",
+              "127803                          NaN                NaN                 NaN  \n",
+              "127804                          NaN                NaN                 NaN  \n",
+              "188426                          NaN                NaN                 NaN  \n",
+              "188427                          NaN                NaN                 NaN  \n",
+              "188428                         14.3                NaN                 NaN  \n",
+              "188429                          0.0                NaN                 NaN  "
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-0f33e39a-928f-4197-a88b-e99a72ae501d\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>School DBN</th>\n",
+              "      <th>School Name</th>\n",
+              "      <th>School Level</th>\n",
+              "      <th>Regents Exam</th>\n",
+              "      <th>Year</th>\n",
+              "      <th>Total Tested</th>\n",
+              "      <th>Mean Score</th>\n",
+              "      <th>Number Scoring Below 65</th>\n",
+              "      <th>Percent Scoring Below 65</th>\n",
+              "      <th>Number Scoring 65 or Above</th>\n",
+              "      <th>Percent Scoring 65 or Above</th>\n",
+              "      <th>Number Scoring 80 or Above</th>\n",
+              "      <th>Percent Scoring 80 or Above</th>\n",
+              "      <th>Number Scoring CR</th>\n",
+              "      <th>Percent Scoring CR</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>13126</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>10</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>10.0</td>\n",
+              "      <td>9.0</td>\n",
+              "      <td>90.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>30.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>13127</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>13</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>6.0</td>\n",
+              "      <td>46.2</td>\n",
+              "      <td>7.0</td>\n",
+              "      <td>53.8</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>7.7</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>43001</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>10</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>10.0</td>\n",
+              "      <td>9.0</td>\n",
+              "      <td>90.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>30.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>43002</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>9</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>43003</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>4</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>87378</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>8</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>87379</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>2</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>87380</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>1</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>87381</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>10</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>4.0</td>\n",
+              "      <td>40.0</td>\n",
+              "      <td>6.0</td>\n",
+              "      <td>60.0</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>10.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>87382</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>2</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>127801</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>4</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>127802</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>6</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>127803</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>5</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>127804</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>8</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>188426</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>6</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>188427</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Common Core Algebra</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>4</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>188428</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>7</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>5.0</td>\n",
+              "      <td>71.4</td>\n",
+              "      <td>2.0</td>\n",
+              "      <td>28.6</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>14.3</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>188429</th>\n",
+              "      <td>23K284</td>\n",
+              "      <td>The Gregory Jocko Jackson School of Sports, Ar...</td>\n",
+              "      <td>K-8</td>\n",
+              "      <td>Living Environment</td>\n",
+              "      <td>2017</td>\n",
+              "      <td>6</td>\n",
+              "      <td>&lt;function to_numeric at 0x7f77a624eb90&gt;</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>16.7</td>\n",
+              "      <td>5.0</td>\n",
+              "      <td>83.3</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-0f33e39a-928f-4197-a88b-e99a72ae501d')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-0f33e39a-928f-4197-a88b-e99a72ae501d button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-0f33e39a-928f-4197-a88b-e99a72ae501d');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 311
+        },
+        "id": "YWcxnso1cI1-",
+        "outputId": "804a9e57-7a75-43ab-a024-3b6dfffe2763"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-21-0375b616820b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mgroupby\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'Regents Exam'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0;34m'Year'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0magg\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'mean'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36mgroupby\u001b[0;34m(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)\u001b[0m\n\u001b[1;32m   7625\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mlevel\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0mby\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   7626\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mTypeError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"You have to supply one of 'by' and 'level'\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 7627\u001b[0;31m         \u001b[0maxis\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_get_axis_number\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0maxis\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   7628\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   7629\u001b[0m         \u001b[0;31m# error: Argument \"squeeze\" to \"DataFrameGroupBy\" has incompatible type\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py\u001b[0m in \u001b[0;36m_get_axis_number\u001b[0;34m(cls, axis)\u001b[0m\n\u001b[1;32m    544\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m_get_axis_number\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcls\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0maxis\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mAxis\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0mint\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    545\u001b[0m         \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 546\u001b[0;31m             \u001b[0;32mreturn\u001b[0m \u001b[0mcls\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_AXIS_TO_AXIS_NUMBER\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0maxis\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    547\u001b[0m         \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    548\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"No axis named {axis} for object type {cls.__name__}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mTypeError\u001b[0m: unhashable type: 'list'"
+          ]
+        }
+      ],
+      "source": [
+        "df.groupby('Regents Exam', ['Year']).agg(['mean'])\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "j12r3_vHXqOa"
+      },
+      "outputs": [],
+      "source": [
+        "pd.set_option('display.max_columns', 500)\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Pb-4__6AcfEa"
+      },
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J6ABhIMQYQ9f",
+        "outputId": "e5ad2722-55f6-4e59-eb05-6c5e1e3083b9"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['School Name',\n",
+              " 'School Level',\n",
+              " 'Regents Exam',\n",
+              " 'Year',\n",
+              " 'Total Tested',\n",
+              " 'Mean Score',\n",
+              " 'Number Scoring Below 65',\n",
+              " 'Percent Scoring Below 65',\n",
+              " 'Number Scoring 65 or Above',\n",
+              " 'Percent Scoring 65 or Above',\n",
+              " 'Number Scoring 80 or Above',\n",
+              " 'Percent Scoring 80 or Above',\n",
+              " 'Number Scoring CR',\n",
+              " 'Percent Scoring CR']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 12
+        }
+      ],
+      "source": [
+        "list(df.columns)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "E61hdnf0X7Q2"
+      },
+      "outputs": [],
+      "source": [
+        "pd.pandas.set_option('display.max_columns', None)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "wWbWzQswR__C"
+      },
+      "outputs": [],
+      "source": [
+        "df2 = df.groupby('Regents Exam')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "seVU5q9Bb2dq"
+      },
+      "outputs": [],
+      "source": [
+        "df2.groupby('Mean Score').agg(['min','max'])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.groupby([])"
+      ],
+      "metadata": {
+        "id": "H76_Q6szYiSj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1-79tQWocBnG",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "34545fd5-a38c-485e-aeaa-ddfe2bbbddd1"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "School Name                    object\n",
+              "School Level                   object\n",
+              "Regents Exam                   object\n",
+              "Year                            int64\n",
+              "Total Tested                    int64\n",
+              "Mean Score                     object\n",
+              "Number Scoring Below 65        object\n",
+              "Percent Scoring Below 65       object\n",
+              "Number Scoring 65 or Above     object\n",
+              "Percent Scoring 65 or Above    object\n",
+              "Number Scoring 80 or Above     object\n",
+              "Percent Scoring 80 or Above    object\n",
+              "Number Scoring CR              object\n",
+              "Percent Scoring CR             object\n",
+              "dtype: object"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 15
+        }
+      ],
+      "source": [
+        "df.dtypes"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df3 = pd.to_numeric()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 165
+        },
+        "id": "g6vEBQ6xZaey",
+        "outputId": "8a0cb912-dd82-490d-c849-0dd359a8cad7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-14-764fb48c0abb>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'Mean Score'\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mto_numeric\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m: to_numeric() missing 1 required positional argument: 'arg'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "bxOlyJqKWQ-V"
+      },
+      "outputs": [],
+      "source": [
+        "#Analyze Student test performance \n",
+        "#groupby \n",
+        "#Pick a feature/Measure/core \n",
+        "#compare above school to a school in your area \n",
+        "#Schools in a bourough or district \n",
+        "#The analysis should include some descriptive Statistics \n",
+        "#the analysis should include on vizualization\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NfH02jjYRke_"
+      },
+      "source": [
+        "**df**.describe"
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Assignment #1",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyNA9i/kFHcc0rwIc4pGPHQG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
